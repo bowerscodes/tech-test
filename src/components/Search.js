@@ -4,21 +4,20 @@ import '../styles/search.css';
 
 function Search() {
   const [value, setValue] = useState();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     getImages(value);
   }
 
   return(
-    <>
-      <form className="search-form">
+    <div className="search">
+      <form className="search-form" onSubmit={handleSubmit}>
         <input
           type="text"
           className="search-form__input"
           placeholder="Type something..."
           onChange={(e) => setValue(e.target.value)}
-          onSubmit={handleSubmit}
-          value={value}
         />
         <button
           className="search-form__button"
@@ -27,7 +26,7 @@ function Search() {
           Search
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
