@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import getImages from '../requests/getImages'
 import '../styles/search.css';
 
-function Search() {
+function Search({ setSearchResults }) {
   const [value, setValue] = useState();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getImages(value);
+    setSearchResults(getImages(value));
   }
 
   return(
@@ -29,5 +29,6 @@ function Search() {
     </div>
   );
 };
+
 
 export default Search;
