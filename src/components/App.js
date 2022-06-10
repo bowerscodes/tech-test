@@ -4,7 +4,8 @@ import Search from '../components/Search';
 import SearchResults from '../components/SearchResults';
 
 const App = () => {
-const [searchResults, setSearchResults] = useState();
+const [searchResults, setSearchResults] = useState([]);
+console.log(searchResults)
   return (
     <div className="app">
       <img
@@ -14,7 +15,7 @@ const [searchResults, setSearchResults] = useState();
       <Search 
         setSearchResults={setSearchResults}
       />
-      <SearchResults />
+      <SearchResults searchResults={searchResults}/>
     </div>
   );
 }
