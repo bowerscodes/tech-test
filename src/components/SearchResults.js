@@ -15,8 +15,8 @@ function SearchResults(props) {
           { searchResults &&
             searchResults.map(function(image, i) {
               return(
-                <div>
-                  <img className="searchResults__result" key={i} src={image} alt="" />
+                <div key={i}>
+                  <img className="searchResults__result" src={image} alt="" />
                 </div>
               ) 
             }
