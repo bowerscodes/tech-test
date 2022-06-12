@@ -5,21 +5,26 @@ import '../styles/searchResults.css';
 function SearchResults(props) {
   const { searchResults } = props;
 
-  return(
-    <div className="searchResults__results">
-      <p className="searchResults__header">Search Results:</p>
-      {/* console.log(searchResults) */}
-        { searchResults &&
-          searchResults.map(function(image, i) {
-            return(
-              <div>
-                <img className="searchResults__result" key={i} src={image} alt="" />
-              </div>
-            ) 
-          }
-        )}
-    </div>
-  );
+  if(!searchResults.length){
+    return <p>No results</p>
+  } else {
+    return(
+      <div className="searchResults__results">
+        <p className="searchResults__header">Search Results:</p>
+        {/* console.log(searchResults) */}
+          { searchResults &&
+            searchResults.map(function(image, i) {
+              return(
+                <div>
+                  <img className="searchResults__result" key={i} src={image} alt="" />
+                </div>
+              ) 
+            }
+          )}
+      </div>
+    );
+  }
+  
 }
 
 export default SearchResults;
