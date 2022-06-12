@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/searchResults.css';
 
-function SearchResults(searchResults) {
+function SearchResults(props) {
+  const { searchResults } = props;
+
   return(
-    <>
-      <p>Search Results</p>
-        {searchResults.map((image) => {
-          return(
-            <div>
-              <img src={image} className="SearchResults__result" alt="" />
-            </div>
-          )
-        })}
-    </>
+    <div className="searchResults__results">
+      <p className="searchResults__header">Search Results:</p>
+      {/* console.log(searchResults) */}
+        { searchResults &&
+          searchResults.map(function(image, i) {
+            return(
+              <div>
+                <img className="searchResults__result" key={i} src={image} alt="" />
+              </div>
+            ) 
+          }
+        )}
+    </div>
   );
 }
 

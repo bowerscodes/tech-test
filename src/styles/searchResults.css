@@ -1,0 +1,19 @@
+.searchResults__results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: space-between;
+    /* align-content: flex-start; */
+    width: 95vw;
+    max-width: 95vw;
+}
+.searchResults__header {
+    width: 100%;
+    font-weight: 400;
+}
+.searchResults__result {
+    /* display: block; */
+    max-width: 100px;
+    width: 200px;
+}
