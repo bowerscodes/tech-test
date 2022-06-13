@@ -18,6 +18,14 @@
     height: auto;
     max-height: 150px;
     /* width: 200px; */
+    border-radius: 8px;
     object-fit: cover;
     padding: 2px;
+}
+
+@media (max-width: 390px) {
+    .searchResults__result {
+        width: 175px;
+        border-radius: 10px;
+    }
 }
