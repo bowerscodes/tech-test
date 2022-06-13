@@ -11,13 +11,17 @@ function SearchResults(props) {
     return(
       <div className="searchResults__results">
         <p className="searchResults__header">Search Results:</p>
-        {/* console.log(searchResults) */}
           { searchResults &&
             searchResults.map(function(image, i) {
               return(
-                <div key={i}>
+                <a
+                  href={image}
+                  target="_blank"
+                  rel='noreferrer'
+                  key={i}
+                >
                   <img className="searchResults__result" src={image} alt="" />
-                </div>
+                </a>
               ) 
             }
           )}
